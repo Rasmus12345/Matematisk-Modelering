@@ -1,0 +1,74 @@
+---
+title: "State space modeller"
+author: "Mia Risbjerg Steiner"
+date: "8/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This exercise is about the state space models and the Kalman filter as discussed
+in Mathematical Modelling. During the oral
+exam you will have 20 min to present the exercise. You decide what topics to
+cover and how to present them, however, we will ask questions to any part of the
+exercise and presentation. Feel free to work in small groups.
+
+## Kalman filter
+
+Consider the dynamic linear model in the general form given in Section
+2.4 of the book ``Dynamic Linear Models with R''. Go through the
+Kalman filter (and, if time permits, the Kalman smoother) for the
+simple random walk + noise model. Interpret the steps.
+
+```{r}
+hej <- c(1,2,3)
+```
+
+## Modelling daily milk yield
+
+Focus on the milk yield data, lecture and R-script of session 2. Feel
+free to elaborate on the script.  In the script we focus on milk yield
+of one cow (and we extract prior information from a bunch of other
+cows).
+
+We have several competing modelling tools at hand
+
+1. Random walk + noise model
+
+1. Local linear growth model
+
+1. The parametric woods curve and a dynamic regression model
+
+1. The parametric woods curve and a Bayesian linear model
+
+1. The parametric woods curve and a classical linear model (as you
+   studied on 5th semester).
+
+Things to look at (take a look at the initial R-script): In the
+R-script focus is on prediction for one cow, and you may want to keep
+focusing on this cow.
+
+1. Given data up to day 20, up to day 50 and up to day 100 forecast
+  the yield in the rest of the lactation period for each of the five
+  models for this specific cow.
+
+1. How will you asses if a model is good model? Which model seems
+   best?
+
+1. Do the same on another cow; are your conclusions the same?
+
+1. For some (all?) models you need prior distributions on some
+   parameters.  Feel free to follow the approach taken in the
+   R-script, although you may want to rethink the choice of batch of
+   cows from which the prior is parameters are "extracted".
+
+1. For some (all?) models there are unknown parameters to be
+   estimated. Estimate these parameters. The question is on the basis
+   of which data these parameters should be estimated? The batch of
+   cows from which priors were extracted? The cows you want to make
+   forecast about? Another batch of data? Make a choice and argue your
+   case.
